@@ -82,7 +82,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Get.to(ScreenOne());
                 Get.toNamed('/screenOne');
               },
-              child: const Text('Go to Screen 1'))
+              child: const Text('Go to Screen 1')),
+          TextButton(
+              onPressed: () {
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => const ScreenOne()));
+
+                // Get.to(ScreenOne());
+                Get.toNamed('/fruitScreen');
+              },
+              child: const Text('Go to Fruit Screen'))
         ],
       ),
     );
