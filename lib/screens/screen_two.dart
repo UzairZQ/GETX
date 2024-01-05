@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_tutroials/controllers/counter_controller.dart';
+import 'package:getx_tutroials/controllers/image_controller.dart';
 import 'package:getx_tutroials/controllers/slider_controller.dart';
 import 'package:getx_tutroials/controllers/switch_controller.dart';
 
@@ -17,6 +20,9 @@ class _ScreenTwoState extends State<ScreenTwo> {
   SliderController sliderController = Get.put(SliderController());
 
   SwithcController swithcController = Get.put(SwithcController());
+
+  ImagePickerController imagePickerController =
+      Get.put(ImagePickerController());
 
   @override
   Widget build(BuildContext context) {
@@ -62,14 +68,32 @@ class _ScreenTwoState extends State<ScreenTwo> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text('Notifications'),
+              const Text('Notifications'),
               Obx(() => Switch(
                   value: swithcController.notification.value,
                   onChanged: (value) {
                     swithcController.setSwitch(value);
                   }))
             ],
-          )
+          ),
+          Obx(() {
+            return Column(
+              children: [
+                CircleAvatar(
+                  radius: 100,
+                  backgroundImage: imagePickerController.imagePath.isNotEmpty
+                      ? FileImage(
+                          File(imagePickerController.imagePath.toString()))
+                      : null,
+                ),
+                TextButton(
+                    onPressed: () {
+                      imagePickerController.getImage();
+                    },
+                    child: const Text('Choose Image'))
+              ],
+            );
+          })
         ],
       ),
     );
