@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_tutroials/screens/fruit_screen.dart';
 import 'package:getx_tutroials/screens/homescreen.dart';
+import 'package:getx_tutroials/screens/login_screen.dart';
 import 'package:getx_tutroials/screens/screen_one.dart';
 import 'package:getx_tutroials/screens/screen_two.dart';
 import 'package:getx_tutroials/languages.dart';
@@ -28,8 +29,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(name: '/screenTwo', page: () => const ScreenTwo()),
         GetPage(name: '/screenOne', page: () => const ScreenOne()),
-                GetPage(name: '/fruitScreen', page: () => const FruitScreen())
-
+        GetPage(name: '/fruitScreen', page: () => const FruitScreen()),
+        GetPage(name: '/loginScreen', page: () => const LoginScreen())
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_tutroials/screens/login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -91,7 +92,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Get.to(ScreenOne());
                 Get.toNamed('/fruitScreen');
               },
-              child: const Text('Go to Fruit Screen'))
+              child: const Text('Go to Fruit Screen')),
+          TextButton(
+              onPressed: () {
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => const ScreenOne()));
+
+                // Get.to(ScreenOne());
+                Get.to(LoginScreen());
+              },
+              child: const Text('Go to Login Screen'))
         ],
       ),
     );
